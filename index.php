@@ -1,35 +1,41 @@
 <?php
+require_once __DIR__ . "/Models/Production.php";
+require_once __DIR__ . "/Data/data.php";
+?>
 
-class Production
-{
-    public $title;
-    public $language;
-    public $vote;
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
 
-    function __construct(
-        string $title,
-        string $language,
-        int $vote
-    ) {
-        $this->title = $title;
-        $this->language = $language;
-        $this->vote = $this->set_vote($vote);
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP OOP</title>
 
-    public function set_vote($vote)
-    {
-        if ($vote > 10)
-            return $this->vote = 10;
-        if ($vote < 1)
-            return $this->vote = 1;
-        else
-            return $this->vote = $vote;
-    }
-}
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+</head>
 
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center mb-5">PHP OOP - Production</h1>
 
-$first_production = new Production("Harry Potter e la camera dei segreti", "Italian", 10);
-var_dump($first_production);
+        <table class="table">
+            <thead class="table-light">
+                <th>Titolo</th>
+                <th class="text-end">Lingua</th>
+                <th class="text-end">Anno di Produzione</th>
+                <th class="text-end">Voto</th>
+            </thead>
 
-$second_production = new Production("Harry Potter e l'ordine della fenice", "Italian", 8);
-var_dump($second_production);
+            <tbody class="table-group-divider">
+                <?php foreach ($productions as $production) : ?>
+                    <?php include __DIR__ . "/template/row.php" ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
