@@ -12,7 +12,7 @@ class Production
         string $title,
         string $language,
         int $production_year,
-        Genre $genre,
+        array $genre,
         int $vote = 5,
     ) {
         $this->title = $title;
