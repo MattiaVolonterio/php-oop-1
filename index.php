@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/Models/Production.php";
+require_once __DIR__ . "/Models/Genre.php";
 require_once __DIR__ . "/Data/data.php";
 ?>
 
@@ -26,6 +27,7 @@ require_once __DIR__ . "/Data/data.php";
                 <th>Titolo</th>
                 <th class="text-end">Lingua</th>
                 <th class="text-end">Anno di Produzione</th>
+                <th class="text-end">Genere</th>
                 <th class="text-end">Voto</th>
             </thead>
 
