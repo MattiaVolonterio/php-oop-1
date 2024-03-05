@@ -29,6 +29,9 @@ require_once __DIR__ . "/Data/data.php";
                 <th class="text-end">Anno di Produzione</th>
                 <th class="text-end">Genere</th>
                 <th class="text-end">Voto</th>
+                <th class="text-end">Profitto</th>
+                <th class="text-end">Durata</th>
+                <th class="text-end">Numero di Stagioni</th>
             </thead>
 
             <tbody class="table-group-divider">
